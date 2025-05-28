@@ -99,9 +99,32 @@ body {
   line-height: var(--bs-body-line-height);
   color: var(--bs-body-color);
   text-align: var(--bs-body-text-align);
-  background-color: var(--bs-body-bg);
+  background-color: var(--bs-black);
   -webkit-text-size-adjust: 100%;
   -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+body::-webkit-scrollbar,
+.modal::-webkit-scrollbar{
+  width: 12px; /* ancho del scroll vertical */
+}
+
+body::-webkit-scrollbar-track,
+.modal::-webkit-scrollbar-track{
+  background: #f1f1f1; 
+}
+
+body::-webkit-scrollbar-thumb,
+.modal::-webkit-scrollbar-track{
+    background-color: #9735b9;
+    border-radius: 6px;
+    border: 10px solid #9735b9;
+    background-clip: content-box;
+}
+
+body::-webkit-scrollbar-thumb:hover,
+.modal::-webkit-scrollbar-thumb:hover{
+  background-color: #d072ee;
 }
 
 hr {
@@ -554,6 +577,125 @@ progress {
 @media (min-width: 1200px) {
   .display-6 {
     font-size: 2.5rem;
+  }
+}
+
+@font-face {
+    font-family: 'Boska';
+    src: url('../fonts/Boska-BlackItalic.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Boska-regular';
+    src: url('/fonts/Boska-Regular.otf') format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.my-text {
+	font-family: 'Boska';
+	color: white;
+}
+
+.my-text-regular {
+	font-family: 'Boska-regular';
+	color: white;
+}
+
+.title {
+color: white;
+    font-size: 3.5rem;
+    padding-inline-start: 2rem;
+}
+
+.my-paragraph {
+	font-size: 2.2rem;
+}
+
+.about-me-container {
+	display: flex;
+    width: 100%;
+    height: auto;
+    justify-content: flex-end;
+}
+
+.about-me-content {
+    display: flex;
+    width: 50%;
+    height: auto;
+    max-height: 30rem;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.carousel-3d-scene {
+    width: 100%;
+    height: auto;
+    perspective: 1000px;
+}
+
+.carousel-3d {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  animation: rotateCarousel 10s linear infinite;
+}
+
+.carousel-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 5rem;
+    justify-content: center;
+}
+
+.carousel-3d img {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.carousel-3d img:nth-child(1) {
+  transform: rotateY(0deg) translateZ(200px);
+}
+.carousel-3d img:nth-child(2) {
+  transform: rotateY(90deg) translateZ(200px);
+}
+.carousel-3d img:nth-child(3) {
+  transform: rotateY(180deg) translateZ(200px);
+}
+.carousel-3d img:nth-child(4) {
+  transform: rotateY(270deg) translateZ(200px);
+}
+
+.carousel-3d:hover {
+  animation-play-state: paused;
+}
+
+
+.design-background {
+	background-image: url("../assets/vaaci.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+.design-background::before {
+	filter: brightness(1.6);
+}
+/* Animación del carrusel */
+@keyframes rotateCarousel {
+  from {
+    transform: rotateY(0deg);
+  }
+  to {
+    transform: rotateY(-360deg);
   }
 }
 
@@ -3718,6 +3860,15 @@ textarea.form-control-lg {
   width: 100%;
 }
 
+.nav-link {
+	color: var(--bs-white);
+}
+
+.nav-link:hover,
+.nav-link:focus {
+	color: #d070ed;
+}
+
 .tab-content > .tab-pane {
   display: none;
 }
@@ -3773,6 +3924,7 @@ textarea.form-control-lg {
   color: var(--bs-navbar-brand-color);
   text-decoration: none;
   white-space: nowrap;
+	opacity: 0;
 }
 .navbar-brand:hover, .navbar-brand:focus {
   color: var(--bs-navbar-brand-hover-color);
@@ -3821,10 +3973,14 @@ textarea.form-control-lg {
   font-size: var(--bs-navbar-toggler-font-size);
   line-height: 1;
   color: var(--bs-navbar-color);
-  background-color: transparent;
+  background-color: var(--bs-white);
   border: var(--bs-border-width) solid var(--bs-navbar-toggler-border-color);
   border-radius: var(--bs-navbar-toggler-border-radius);
   transition: var(--bs-navbar-toggler-transition);
+}
+
+.portfolio-title {
+	font-size: 10rem;
 }
 @media (prefers-reduced-motion: reduce) {
   .navbar-toggler {
@@ -5315,7 +5471,7 @@ textarea.form-control-lg {
   background-color: var(--bs-modal-bg);
   background-clip: padding-box;
   border: var(--bs-modal-border-width) solid var(--bs-modal-border-color);
-  border-radius: var(--bs-modal-border-radius);
+  border-radius: 18px;
   outline: 0;
 }
 
@@ -5362,6 +5518,111 @@ textarea.form-control-lg {
   position: relative;
   flex: 1 1 auto;
   padding: var(--bs-modal-padding);
+border-radius: 16px;
+	    background: var(--bs-gray);
+}
+
+.modal-content.modal-background {
+    background-color: transparent !important;
+}
+
+.modal-background {
+  height: 80.6vh;
+  position: relative;
+  border: none;
+  padding: 0;
+  overflow: hidden;
+}
+
+.modal-image {
+    width: 100%;
+    height: 50rem;
+    display: block;
+}
+
+.modal-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50rem !important;
+    padding: 2rem;
+    background: rgba(0, 0, 0, 0);
+    overflow: hidden;
+}
+
+#nameTitle {
+	font-size: 2.2rem;
+}
+
+#nameText {
+	font-size: 1.5rem;
+}
+
+
+@media (max-width: 1550px) {
+	
+	#nameText {
+		font-size: 1.4rem;
+	}
+	
+	.modal-image {
+    height: 40rem;
+	}
+	
+	iframe {
+	  width: 500px !important;
+	  height: 500px !important;
+	}
+}
+
+/* Asegura que el contenido no se salga en pantallas pequeñas */
+@media (max-width: 768px) {
+  .modal-body {
+    padding: 1rem;
+  }
+
+  .about-me-content p {
+    font-size: 1rem !important;
+  }
+}
+
+@keyframes tada {
+	0% {
+		transform: scale3d(1, 1, 1);
+	}
+	10%, 20% {
+		transform: scale3d(0.9, 0.9, 0.9) rotate3d(0, 0, 1, -3deg);
+	}
+	30%, 50%, 70%, 90% {
+		transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, 3deg);
+	}
+	40%, 60%, 80% {
+		transform: scale3d(1.1, 1.1, 1.1) rotate3d(0, 0, 1, -3deg);
+	}
+	100% {
+		transform: scale3d(1, 1, 1);
+	}
+}
+
+
+.avatar-img {
+    position: absolute;
+    width: 20em;
+    height: auto;
+    border-radius: 50%;
+    transition: transform .1s ease;
+    left: 0%;
+}
+
+.avatar-img:hover {
+	animation: tada 0.6s ease both;
+}
+
+@media screen and (max-width: 900px) {
+	.avatar-img {
+		width: 15em;
+	}
 }
 
 .modal-footer {
@@ -5378,6 +5639,26 @@ textarea.form-control-lg {
 }
 .modal-footer > * {
   margin: calc(var(--bs-modal-footer-gap) * 0.5);
+}
+
+.portafolio-container {
+    width: 100%;
+    height: 100vh;
+    background-image: url("../assets/fondo-porta.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+@media screen and (max-width: 1500px) {
+	.portafolio-container {
+		background-image: url("../assets/fondo vertical.jpg");
+	}
+}
+
+@media screen and (max-width: 750px) {
+	.portafolio-container {
+		background-image: url("../assets/fondo crentro cel.jpg");
+	}
 }
 
 @media (min-width: 576px) {
@@ -6019,6 +6300,111 @@ textarea.form-control-lg {
   --bs-spinner-height: 1rem;
   --bs-spinner-border-width: 0.2em;
 }
+
+.design-content {
+	display: flex;
+	width: 100%;
+	height: auto;
+}
+
+.galery-container {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(250px, 1fr));
+    gap: 3.5rem;
+    padding: 2rem;
+    width: 100%;
+    justify-items: center;
+    align-items: center;
+}
+
+/* The flip card container - set the width and height to whatever you want. We have added the border property to demonstrate that the flip itself goes out of the box on hover (remove perspective if you don't want the 3D effect */
+.flip-card {
+    background-color: transparent;
+    width: 290px;
+    height: 290px;
+    perspective: 1000px;
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform .4s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: -50px;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: 50%;
+  overflow: hidden; /* Importante para que nada se salga */
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+    background-color: transparent;
+    color: var(--bs-black);
+    border-radius: 50%;
+    box-shadow: 4px 4px 10px 0px #d7b1e4;
+	position: relative;
+    overflow: hidden;
+}
+
+.flip-card-front::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    120deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    transparent 100%
+  );
+  transform: rotate(25deg);
+  animation: shine 2.5s infinite ease-in-out;
+}
+
+@keyframes shine {
+  0% {
+    transform: rotate(25deg) translate(-100%, -100%);
+  }
+  100% {
+    transform: rotate(25deg) translate(100%, 100%);
+  }
+}
+
+.flip-card-back img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Para que no se deforme y se mantenga dentro del círculo */
+  border-radius: 50%;
+}
+
+/* Style the back side */
+.flip-card-back {
+  transform: rotateY(180deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #000; /* Por si la imagen no cubre todo */
+}
+
+
 
 @keyframes spinner-grow {
   0% {
@@ -11730,5 +12116,94 @@ html {
   .profile .dots-4 {
     width: 1.5vw;
     left: -2vw;
+  }
+}
+
+#intro-glitch {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeOut 2s 2s forwards;
+}
+
+.glitch {
+  font-size: 4rem;
+  font-weight: bold;
+  color: white;
+  position: relative;
+  animation: glitchAnim 2s linear;
+}
+
+.glitch::before,
+.glitch::after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: white;
+  background: black;
+  overflow: hidden;
+}
+
+.glitch::before {
+  left: 2px;
+  text-shadow: -2px 0 magenta;
+  animation: glitchTop 1s linear infinite;
+}
+
+.glitch::after {
+  left: -2px;
+  text-shadow: -2px 0 cyan;
+  animation: glitchBottom 1s linear infinite;
+}
+
+@keyframes glitchTop {
+  0% { clip-path: inset(0 0 80% 0); }
+  25% { clip-path: inset(10% 0 70% 0); }
+  50% { clip-path: inset(20% 0 60% 0); }
+  75% { clip-path: inset(10% 0 70% 0); }
+  100% { clip-path: inset(0 0 80% 0); }
+}
+
+@keyframes glitchBottom {
+  0% { clip-path: inset(80% 0 0 0); }
+  25% { clip-path: inset(70% 0 10% 0); }
+  50% { clip-path: inset(60% 0 20% 0); }
+  75% { clip-path: inset(70% 0 10% 0); }
+  100% { clip-path: inset(80% 0 0 0); }
+}
+
+@keyframes fadeOut {
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+body.loaded main,
+body.loaded footer {
+  opacity: 1;
+  transition: opacity 0.5s ease-in-out;
+}
+
+body.loaded main,
+body.loaded footer {
+  animation: fadeIn 1s ease-in forwards;
+}
+
+
+
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
   }
 }

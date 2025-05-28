@@ -5,7 +5,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-        <title>Portafolio interactivo</title>
+        <title>Modern Business - Start Bootstrap Template</title>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Custom Google font-->
@@ -17,9 +17,9 @@
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
     </head>
-    <body class="d-flex flex-column h-100">
+    <body class="d-flex flex-column h-100 bg-light design-background">
 		<div id="intro-glitch">
-  			<h1 class="glitch" data-text="Cargando creatividad...">Cargando creatividad...</h1>
+  			<h1 class="glitch" data-text="Pintando pixeles...">Pintando pixeles...</h1>
 		</div>
         <main class="flex-shrink-0">
             <!-- Navigation-->
@@ -46,65 +46,24 @@
                    </div>
                 </div>
             </nav>
-            <!-- Header-->
-            <header class="pb-5" style="background: var(--bs-black);">
-				<div class="container">
-					<img data-bs-toggle="modal" data-bs-target="#AboutMeModal" role="button" class="avatar-img tada" src="assets/icono.png"/>
-				</div>
-                <div>
-                    <div class="col-12 d-flex justify-content-center">
-						<div class="col-12 d-flex justify-content-center portafolio-container">
-						</div>
+            <!-- Projects Section-->
+            <section>
+                <div class="container px-5 mb-5">
+                    <div class="text-center mb-5">
+						<h1 class="my-text title m-0">El diseño no se mira, ¡se desbloquea!</h1>
+                    </div>
+                    <div class="row gx-5 justify-content-center">
+                        <div class="col-lg-11 col-xl-9 col-xxl-8 d-flex justify-content-center">
+<iframe src="https://auras.h5p.com/content/1292598462738198598/embed" aria-label="arbol morado" width="300" height="300" frameborder="0" allowfullscreen="allowfullscreen" allow="autoplay *; geolocation *; microphone *; camera *; midi *; encrypted-media *"></iframe><script src="https://auras.h5p.com/js/h5p-resizer.js" charset="UTF-8"></script>
+                        </div>
                     </div>
                 </div>
-            </header>
+            </section>
         </main>
-		
-		<div class="modal fade" id="AboutMeModal" tabindex="-1" aria-labelledby="AboutMeModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-xl" style="margin-top: 5rem; max-width: 90vw;">
-    <div class="modal-content modal-background">
-      <img src="assets/sobre-mi.jpg" class="modal-image" alt="Fondo Sobre Mí" />
-      <div class="modal-body modal-overlay">
-        <h1 class="my-text title m-0">¡Me descubriste!</h1>
-        <div class="about-me-container">
-          <div class="about-me-content">
-            <p id="nameTitle" class="my-text">¡Hola! me llamo Laura Echeverri</p>
-            <p id="nameText" class="my-text-regular">
-              Soy estudiante de Diseño Visual en la Fundación Universitaria Compensar, con enfoque en comunicación.
-              Me destaco por mi responsabilidad, dinamismo y compromiso, con habilidades para el trabajo en equipo,
-              el aprendizaje constante y la adaptación a nuevos retos.
-            </p>
-            <p style="font-size: 2.2rem" class="my-text">My Skills:</p>
-
-            <div class="carousel-container">
-              <div class="carousel-3d-scene">
-                <div class="carousel-3d">
-                  <img src="assets/ai.png" />
-                  <img src="assets/dw.png" />
-                  <img src="assets/id.png" />
-                  <img src="assets/ph.png" />
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>
-
         <!-- Bootstrap core JS-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-		<script>
-		  window.addEventListener("load", function () {
-			setTimeout(() => {
-			  document.body.classList.add("loaded");
-			  const intro = document.getElementById("intro-glitch");
-			  if (intro) intro.remove(); // elimina la intro después
-			}, 3000); // espera a que termine la animación
-		  });
-		</script>
+		
+		<script src="https://auras.h5p.com/js/h5p-resizer.js" charset="UTF-8"></script>
         <!-- Core theme JS-->
         <script src="js/scripts.js"></script>
     </body>
