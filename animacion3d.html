@@ -19,9 +19,9 @@
     </head>
     <body class="d-flex flex-column h-100 bg-light">
 				<div id="intro-glitch">
-  				<h1 class="glitch" data-text="Revelando diseño...">Revelando diseño...</h1>
+  				<h1 class="glitch" data-text="Render en progreso">Render en progreso</h1>
 		</div>
-        <main class="flex-shrink-0 design-background">
+        <main style="height: 100vh" class="flex-shrink-0 design-background">
             <!-- Navigation-->
             <nav style="background: var(--bs-black);" class="navbar navbar-expand-lg navbar-light py-3">
                 <div class="container px-5">
@@ -53,10 +53,10 @@
                 </div>
                 <div class="col justify-content-center">
                     <div class="design-content d-flex justify-content-center col-lg-11 col-xl-9 col-xxl-8 p-0">
-						<h1 class="my-text" m-0>Video</h1>
-                      <video controls>
-                          <source src="videos/ajedrez ‐ Hecho con Clipchamp.mp4" type="video/mp4">
-                      </video>
+						<div class="video-container fade-in-left">
+						<iframe width="560" height="315" src="https://www.youtube.com/embed/uI6jOv2Neds" frameborder="0" allowfullscreen>
+						</iframe>
+    				</div>
                     </div>
                 </div>
 				<div class="modal fade" id="imageModal" tabindex="-1" aria-hidden="true">

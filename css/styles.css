@@ -614,6 +614,16 @@ color: white;
 	font-size: 2.2rem;
 }
 
+.my-subtitle {
+	font-size: 2rem;
+}
+
+.curved-text {
+  display: inline-block;
+  transform: rotate(-5deg); /* solo inclina, no curva real */
+  font-size: 2rem;
+}
+
 .about-me-container {
 	display: flex;
     width: 100%;
@@ -2131,6 +2141,33 @@ color: white;
   font-size: 0.875em;
   color: #6c757d;
 }
+
+.fade-in-delay {
+  opacity: 0;
+  animation: fadeIn 1.5s ease-in forwards;
+  animation-delay: 3s;
+}
+
+.fade-in-left {
+  opacity: 0;
+  transform: translateX(-50px);
+  animation: fadeInLeft 1s ease-out forwards;
+  animation-delay: 3s;
+}
+
+.fade-in-right {
+  opacity: 0;
+  transform: translateX(50px);
+  animation: fadeInRight 1s ease-out forwards;
+  animation-delay: 3s;
+}
+
+.flotante {
+  animation: flotar 3s ease-in-out infinite;
+	animation-delay: 3s;
+}
+
+
 
 .form-control {
   display: block;
@@ -5557,6 +5594,44 @@ border-radius: 16px;
 
 #nameText {
 	font-size: 1.5rem;
+}
+
+.glass-effect {
+  background: rgba(255, 255, 255, 0.15); /* Color base semitransparente */
+  border-radius: 1rem;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  backdrop-filter: blur(10px); /* Efecto desenfoque de fondo */
+  -webkit-backdrop-filter: blur(10px); /* Para Safari */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Borde tenue */
+}
+
+.glass-container {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    width: 100%;
+    min-height: 30rem;
+    height: auto;
+    max-height: 50rem;
+    align-items: center;
+}
+
+.redes-container {
+	display: grid;
+	width: 100%;
+	height: auto;
+	grid-template-columns: repeat(3, 1fr);
+	gap: 1rem;
+	justify-items: center;
+}
+.redes-container img {
+	width: 15rem;
+	height: auto;
+	transition: transform 0.8s ease;
+}
+
+.redes-container img:hover {
+  transform: scale(1.5) rotate(360deg);
 }
 
 
@@ -12181,11 +12256,37 @@ html {
   100% { clip-path: inset(80% 0 0 0); }
 }
 
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+  }
+}
+
 @keyframes fadeOut {
   to {
     opacity: 0;
     visibility: hidden;
   }
+}
+
+@keyframes fadeInLeft {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes fadeInRight {
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes flotar {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
 }
 
 body.loaded main,
@@ -12197,13 +12298,4 @@ body.loaded footer {
 body.loaded main,
 body.loaded footer {
   animation: fadeIn 1s ease-in forwards;
-}
-
-
-
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-  }
 }
